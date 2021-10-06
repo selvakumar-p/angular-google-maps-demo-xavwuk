@@ -13,9 +13,10 @@
       *ngFor="let m of markers; let i = index"
       (markerClick)="clickedMarker(m.label, i)"
       [latitude]="m.lat"
-      [longitude]="m.lng" [iconUrl]="'https://gist.githubusercontent.com/selvakumar-p/cc23d282c5de644c932a5c0b3c92f132/raw/f07a4a82277626da3f250018f94455911812ad23/marker.svg'"
-      [label]="m.label"
-      [markerDraggable]="m.draggable"
+      [longitude]="m.lng" [iconUrl]="m.icon"
+      
+      [markerDraggable]="m.draggable" [label]="m.label"
+    
       (dragEnd)="markerDragEnd(m, $event)">
       
     <agm-info-window>
